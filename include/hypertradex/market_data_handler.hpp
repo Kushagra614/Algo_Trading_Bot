@@ -34,3 +34,10 @@ struct MarketDataEvent {
 
 //Trade Event
 
+struct TradeEvent : public MarketDataEvent {
+    Event type() const override ( return EventType::Trade; )
+    Price price;
+    Quantity quantity;
+    bool is buyer_maker;
+    Symbol symbol;
+}
